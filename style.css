@@ -1,0 +1,41 @@
+.card_d {
+  margin-top: 60px;
+  min-width: 300px;
+  min-height: 400px;
+  height: max-content;
+  position: relative;
+  perspective: 1000px;
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+.front img {
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+}
+.back {
+  transform: rotateY(180deg);
+}
+.card_d:hover .front {
+  transform: rotateY(180deg);
+}
+.card_d:hover .back {
+  transform: rotateY(360deg);
+}
+
+@media screen and (max-width: 430px) {
+  .card_d {
+    min-height: 300px;
+  }
+}
